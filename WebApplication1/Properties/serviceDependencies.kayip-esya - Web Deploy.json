@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/kayip-esya-server/databases/kayip-esya-db",
+      "type": "mssql.azure",
+      "connectionId": "kayip-esya-db",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "EsyaContext",
+      "suggestion": "true",
+      "ignored": "true"
+    }
+  }
+}

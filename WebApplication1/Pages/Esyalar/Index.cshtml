@@ -1,0 +1,84 @@
+﻿@page
+@model WebApplication1.Pages.Esyalar.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Esya[0].ilanDurumu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esya[0].ilanBasligi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esya[0].ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esya[0].soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esya[0].adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esya[0].sehir)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esya[0].ilce)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esya[0].detay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esya[0].resim)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Esya) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ilanDurumu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ilanBasligi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sehir)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ilce)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.detay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.resim)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,75 @@
+﻿@page
+@model WebApplication1.Pages.Esyalar.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Esya</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Esya.id" />
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Esya.ilanDurumu" /> @Html.DisplayNameFor(model => model.Esya.ilanDurumu)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Esya.ilanBasligi" class="control-label"></label>
+                <input asp-for="Esya.ilanBasligi" class="form-control" />
+                <span asp-validation-for="Esya.ilanBasligi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Esya.ad" class="control-label"></label>
+                <input asp-for="Esya.ad" class="form-control" />
+                <span asp-validation-for="Esya.ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Esya.soyad" class="control-label"></label>
+                <input asp-for="Esya.soyad" class="form-control" />
+                <span asp-validation-for="Esya.soyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Esya.adres" class="control-label"></label>
+                <input asp-for="Esya.adres" class="form-control" />
+                <span asp-validation-for="Esya.adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Esya.sehir" class="control-label"></label>
+                <input asp-for="Esya.sehir" class="form-control" />
+                <span asp-validation-for="Esya.sehir" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Esya.ilce" class="control-label"></label>
+                <input asp-for="Esya.ilce" class="form-control" />
+                <span asp-validation-for="Esya.ilce" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Esya.detay" class="control-label"></label>
+                <input asp-for="Esya.detay" class="form-control" />
+                <span asp-validation-for="Esya.detay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Esya.resim" class="control-label"></label>
+                <input asp-for="Esya.resim" class="form-control" />
+                <span asp-validation-for="Esya.resim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

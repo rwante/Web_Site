@@ -1,0 +1,104 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<html>
+<head>
+    <title>Anasayfa</title>
+    <!--Gerekli css, bootstrap, js kaynakları ekleniyor... -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="src/font-awesome/css/all.css" rel="stylesheet">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script type="text/javascript" src="/js/navbar.js"></script>
+</head>
+<body>
+    <!--Sitenin Başlık kısmı ve navbar-->
+    <header>
+        <nav class="topnav" id="myTopnav">
+            <div class="logo">
+                <a href="index"><img src="~/images/logo.png" /></a>
+                <a href="index" class="active"><i class="fa fa-home fa-2x">Anasayfa</i></a>
+                <a href="yeniilan"><i class="fa fa-search fa-2x">Yeni İlan Ver</i></a>
+                <a href="kayipesyalar"><i class="fa fa-clipboard fa-2x">Kayıp Eşya İlanları</i></a>
+                <a href="sahipsizesyalar"><i class="fa fa-paw fa-2x">Sahipsiz Eşyalar</i></a>
+                <a href="hakkimizda"><i class="fa fa-address-card fa-2x">Hakkımızda</i></a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!-- Türkiye Haritası -->
+    <div id="map">
+        <div class="img-container">
+            <img class="harita" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Turkey_provinces_blank_gray.svg" alt="Map">
+        </div>
+        <!-- Harita üzerindeki noktalar -->
+        <div id="dots">
+            <div class="dot dot-1 kirmizi" style="top: 34%; left: 14.5%;"></div>
+            <div class="dot dot-2" style="top: 43%; left: 15.5%;"></div>
+            <div class="dot dot-3 kirmizi" style="top: 21%; left: 20%;"></div>
+            <div class="dot dot-4" style="top: 51%; left: 20.5%;"></div>
+            <div class="dot dot-5" style="top: 19%; left: 16%;"></div>
+            <div class="dot dot-6" style="top: 21%; left: 19%;"></div>
+        </div>
+    </div>
+    <!-- Footer Kısmı -->
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 item text">
+                        <h3>KAYIP BULUR</h3>
+                        <p>4 Bilgisayar mühendisliği öğrencisi tarafından bir dönem projesi olarak başlayan Kayıp Bulur isimli site zaman içinde gelişerek bir dünya markası haline gelmeyi ve insanlara faydalı olmayı amaçlamaktadır.</p>
+                    </div>
+                    <!-- Sosyal Medya Butonları -->
+                    <div class="mb-4">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-google"></i>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <!-- Linkedin -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <!-- Github -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <!-- Section: Social media -->
+                </div>
+                <p class="copyright">Kayıp Bulur © 2021</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

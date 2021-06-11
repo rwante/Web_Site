@@ -1,0 +1,159 @@
+﻿@page
+@model WebApplication1.Pages.yeniilanModel
+@{
+
+}
+
+
+<html>
+
+<head>
+    <title>Yeni İlan</title>
+    <meta charset="utf-8">
+    <!--Gerekli css, bootstrap, js kaynakları ekleniyor... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <link href="~/css/style2.css" rel="stylesheet" />
+    <link href="src/font-awesome/css/all.css" rel="stylesheet">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script type="text/javascript" src="/js/navbar.js"></script>
+    <script src="/js/esyakayip.js" defer></script>
+</head>
+<body>
+    <!-- Navbar Kısmı -->
+    <header>
+        <nav class="topnav" id="myTopnav">
+            <div class="logo">
+                <a href="index"><img src="~/images/logo.png" /></a>
+                <a href="index" class="active"><i class="fa fa-home fa-2x">Anasayfa</i></a>
+                <a href="yeniilan"><i class="fa fa-search fa-2x">Yeni İlan Ver</i></a>
+                <a href="kayipesyalar"><i class="fa fa-clipboard fa-2x">Kayıp Eşya İlanları</i></a>
+                <a href="sahipsizesyalar"><i class="fa fa-paw fa-2x">Sahipsiz Eşyalar</i></a>
+                <a href="hakkimizda"><i class="fa fa-address-card fa-2x">Hakkımızda</i></a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+
+            </div>
+
+        </nav>
+    </header>
+    <!-- HTML form elemenlerinin oluşturulması -->
+    <section>
+        <div class="container center_div">
+            <form class="form" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group form-check">
+
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Esya.ilanDurumu"> Başkasının eşyasını buldum</input>
+                    </label>
+                </div>
+
+                <div class="form-group col-md-8">
+                    <label asp-for="Esya.ilanBasligi" for="inputAddress2">İlan Başlığı</label>
+                    <input asp-for="Esya.ilanBasligi" type="text" class="form-control" id="ilantitle" placeholder="İlanınız İçin Dikkat Çekecek 60 Karakterlik Başlık" maxlength="60" required>
+                </div>
+
+                <div class="col-md-8">
+                    <label asp-for="Esya.ad" for="firstName">Ad</label>
+                    <input asp-for="Esya.ad" type="text" class="form-control" placeholder="Ad" id="firstName" required>
+                </div>
+                <div class="col-md-8">
+                    <label for="lastName">Soyad</label>
+                    <input asp-for="Esya.soyad" type="text" class="form-control" placeholder="Soyad" id="lastName" required>
+                </div>
+                <div class="form-group col-md-8">
+                    <label asp-for="Esya.adres" for="inputAddress">Adres</label>
+                    <input asp-for="Esya.adres" type="text" class="form-control" id="inputAddress" placeholder="Eşyayı kaybettiğiniz adresi tanımlayınız..." required>
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="Iller">Şehir</label>
+                    <select asp-for="Esya.sehir" id="Iller" class="form-control" required>
+                        <option value="0">Lütfen Bir İl Seçiniz</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="Ilceler">İlçe</label>
+                    <select asp-for="Esya.ilce" id="Ilceler" disabled="disabled" class="form-control" required>
+                        <option value="">Lütfen Önce bir İl seçiniz</option>
+                    </select>
+                </div>
+                <div class="col-8">
+                    <label for="ilandetayi" class="form-label">Kayıp Eşyanın Detayı</label>
+                    <textarea asp-for="Esya.detay" class="form-control" id="ilandetayi" rows="6" placeholder="Kayıp eşyanızı en detaylı biçimde açıklayın. Ne kadar çok detay verirseniz o kadar iyi sonuç alırsınız..." required></textarea>
+                </div>
+                <div class="form-group" asp-controller="FileController">
+                    <label for="exampleFormControlFile1">&nbsp;&nbsp;Eşyanızın resmini seçiniz...</label>
+                    <input asp-action="api/file" type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*">
+                </div>
+
+                <button type="submit" value="Create" class="btn btn-success btn-lg" onclick="saveFile()">Kaydet</button>
+                <button type="reset" class="btn btn-danger btn-lg">Temizle</button>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- Foter Kısmı -->
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 item text">
+                        <h3>KAYIP BULUR</h3>
+                        <p>4 Bilgisayar mühendisliği öğrencisi tarafından bir dönem projesi olarak başlayan Kayıp Bulur isimli site zaman içinde gelişerek bir dünya markası haline gelmeyi ve insanlara faydalı olmayı amaçlamaktadır.</p>
+                    </div>
+                    <!-- Section: Social media -->
+                    <div class="mb-4">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-google"></i>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <!-- Linkedin -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <!-- Github -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <!-- Section: Social media -->
+                </div>
+                <p class="copyright">Kayıp Bulur © 2021</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+</body>
+<!-- txt yazıp bilgisayara indirtme kodu -->
+
+</html>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
