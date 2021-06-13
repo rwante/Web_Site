@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -19,6 +20,6 @@ namespace WebApplication1.Models
         public String sehir { get; set; }
         public String ilce { get; set; }
         public String detay { get; set; }
-        public byte[] resim { get; set; }
+        public String resim { get; set; }
     }
 }

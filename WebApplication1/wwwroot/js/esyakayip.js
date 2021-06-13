@@ -1475,7 +1475,7 @@ function search(nameKey, myArray){
 $( document ).ready(function() {
   $.each(data, function( index, value ) {
     $('#Iller').append($('<option>', {
-        value: value.il,
+        value: value.plaka,
         text:  value.il
     }));
   });

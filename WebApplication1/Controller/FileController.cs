@@ -76,7 +76,7 @@ namespace WebApplication1.Controller
                 await _blobStorage.SetLogAsync(text, fileName);
                 return Ok(true);
             }
-            catch (Exception ex)
+            catch
             {
 
                 return Ok("Beklenmeyen bir hatayla karşılaşıldı.");
